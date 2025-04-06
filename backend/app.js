@@ -19,6 +19,10 @@ app.get("/", (req, res) => {
   res.status(200).send("Hello World!");
 });
 
+app.get("/api/", (req, res) => {
+  res.status(200).send("Hello World!");
+});
+
 app.get("/home", (req, res) => {
    const id = req.query.id;
 //   req.params;
