@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/", (req, res) => {
-  res.status(200).send("Hello World!");
+  res.status(400).send("page not found!");
 });
 
 app.get("/home", (req, res) => {

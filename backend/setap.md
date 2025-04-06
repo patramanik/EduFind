@@ -10,13 +10,13 @@
     git commit -m "hi"
     # for push on current branch 
     git push 
-    #for push on main or any other branch 
+    #for push for other branch 
     git push origin main
 
     # for pull on current branch 
     git pull 
     
-    # for pull from any branch
+    # for pull from other branch
     git pull origin manik
 
 ```
