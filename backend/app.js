@@ -3,6 +3,9 @@ const cors = require("cors");
 
 const { logReqRes } = require("./middleware/logReqRes"); // Assuming this is the correct path to your middleware
 
+const { authRoute,homeRoute } = require("./routes/index"); // Assuming this is the correct path to your routes
+
+// Assuming this is the correct path to your routes
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -23,20 +26,9 @@ app.get("/api/", (req, res) => {
   res.status(200).send("Hello World!");
 });
 
-app.get("/home", (req, res) => {
-   const id = req.query.id;
-//   req.params;
-//   console.log(req.params); // { id: 1 }
-//   console.log(req.body); // { name: "John" }
-//   req.headers;
-  console.log(req.query); // { id: 1 }
-  // req.query = { name: "John" };
-  // req.body = { age: 30 };
-  const name = "John Doe"; // Example variable
-  res.json({ message: "Welcome to the home page!", name, id });
-});
+app.use("/api/v1/auth",authRoute);
 
-// app.use("/api/home", );
+app.use("/home",homeRoute);
 
 // Start the server
 app.listen(PORT, () => {

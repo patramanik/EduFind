@@ -1,3 +1,4 @@
 const authRoute = require("./auth");
+const homeRoute = require("./homeRout");
 
-module.exports = {authRoute};
+module.exports = {authRoute, homeRoute};
